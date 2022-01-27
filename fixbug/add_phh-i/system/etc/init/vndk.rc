@@ -1,0 +1,5 @@
+on post-fs
+	exec - root -- /system/bin/rw-system.sh
+	
+
+on property:vold.decrypt=trigger_restart_framework
