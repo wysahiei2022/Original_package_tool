@@ -44,6 +44,7 @@ python_install(){
         sudo add-apt-repository universe
         sudo python get-pip.py
         sudo apt install python3 python3-pip -y
+        sudo apt install bc
 }
 
 pip_module_install(){
