@@ -39,7 +39,6 @@ dependency_install(){
 python_install(){
         echo -e "\033[33m [INFO] Python and Pip install... \033[0m"
         sudo apt-get --purge remove -y python3-pip
-        sudo apt install python aptitude -y
         sudo aptitude install python-dev -y
         sudo add-apt-repository universe
         sudo python get-pip.py
