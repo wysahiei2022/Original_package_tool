@@ -19,7 +19,7 @@ H2OS
 Color
 --------------------
 "
-read -p "请选择系统种类(用小写输出): " fix
+source ../Config.sh
 
 if [ $fix = "miui" ];then
  ./miui.sh

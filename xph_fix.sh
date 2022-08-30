@@ -1,3 +1,5 @@
+source ./Config.sh
+
 #nfc删除
 case $nfc in
     "y")
