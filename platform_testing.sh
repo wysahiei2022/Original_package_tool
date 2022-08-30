@@ -10,8 +10,8 @@ if [[ ! -f ./tool_bin ]] ;then
            ;;
     "aarch64") 
                git clone https://github.com/XPHNature/Tool_bin -b Phone
-               chmod -R 777 ./Tool_bin/Phone_Bin.7z
-               7z x ./Tool_bin/Phone_Bin.7z 
+               chmod -R 777 ./Tool_bin/Phone_bin.7z
+               7z x ./Tool_bin/Phone_bin.7z 
                rm -rf ./Tool_bin
   esac
 fi
