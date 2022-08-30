@@ -458,23 +458,9 @@ read -p "是否删除NFC服务(y/n): " nfc
 case $nfc in
     "y")
         echo "开始删除nfc服务"
-        for line in $(find ./out/system -name "*nfc*.so"); do
-            rm -rf $line >/dev/null 2>&1
+        for fucknfc in $(find ./out/system -name "*nfc*"); do
+            rm -rf $fucknfc >/dev/null 2>&1
         done
-        for line in $(find ./out/system -name "*nfc*.xml"); do
-        rm -rf $line >/dev/null 2>&1
-done
-        for line in $(find ./out/system -name "*nfc*.jar"); do
-        rm -rf $line >/dev/null 2>&1
-done
-        for line in $(find ./out/system -name "*nfc*.odex"); do
-        rm -rf $line >/dev/null 2>&1
-done
-        for line in $(find ./out/system -name "*nfc*.vdex"); do
-        rm -rf $line >/dev/null 2>&1
-done
-rm -rf ./out/system/system/system_ext/app/NQNfcNci/
-rm -rf ./out/system/system/app/NQNfcNci/
         cd $LOCALDIR
         ;;
     "n")
