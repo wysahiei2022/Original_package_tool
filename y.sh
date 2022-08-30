@@ -87,11 +87,6 @@ function normal() {
 
     # 为所有rom禁用caf media.setting
     sed -i '/media.settings.xml/d' $systemdir/build.prop
-
-    # 为所有rom改用自适应apex更新支持状态
-    sed -i '/ro.apex.updatable/d' $systemdir/build.prop
-    sed -i '/ro.apex.updatable/d' $systemdir/product/build.prop
-    sed -i '/ro.apex.updatable/d' $systemdir/system_ext/build.prop
  
   # 为所有rom还原fstab.postinstall
   find  ./out/system/ -type f -name "fstab.postinstall" | xargs rm -rf
