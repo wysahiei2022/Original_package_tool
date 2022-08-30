@@ -442,23 +442,9 @@ read -p "是否phh化(y/n): " phh
       ;;  
   esac
  
- #nfc删除
-read -p "是否删除NFC服务(y/n): " nfc
-case $nfc in
-    "y")
-        echo "开始删除nfc服务"
-        for fucknfc in $(find ./out/system -name "*nfc*"); do
-            rm -rf $fucknfc >/dev/null 2>&1
-        done
-        cd $LOCALDIR
-        ;;
-    "n")
-        echo "跳过删除nfc服务"
-        ;;
-    *)
-        echo "输入错误！！！！！你是一个一个一个"
-        ;;
-esac
+  # XPH FIX
+  source ./xph_fix.sh
+
   # bug修复
   read -p "是否修复启用bug修复(y/n): " fixbug
   
