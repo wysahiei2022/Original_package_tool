@@ -5,7 +5,6 @@
 LOCALDIR=`cd "$( dirname $0 )" && pwd`
 cd $LOCALDIR
 source ./bin.sh
-
 Usage() {
 cat <<EOT
 Usage:
@@ -24,6 +23,7 @@ case $1 in
 esac
 
 echo "环境初始化中 请稍候..."
+source ./platform_testing.sh
 mkdir -p ./tmp
 chmod -R 777 ./
 chown -R root:root ./
