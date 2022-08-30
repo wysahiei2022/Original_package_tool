@@ -82,11 +82,6 @@ function normal() {
     sed -i '/oem/d' $systemdir/system_ext/etc/selinux/system_ext_property_contexts
   fi
   
-    # 为所有rom改用分辨率自适应
-    sed -i 's/ro.sf.lcd/#&/' $systemdir/build.prop
-    sed -i 's/ro.sf.lcd/#&/' $systemdir/product/build.prop
-    sed -i 's/ro.sf.lcd/#&/' $systemdir/system_ext/build.prop
-    
      # 为所有rom禁用product vndk version
     sed -i '/product.vndk.version/d' $systemdir/product/build.prop
 
@@ -467,53 +462,9 @@ case $nfc in
         echo "跳过删除nfc服务"
         ;;
     *)
-        echo "error!"
-        exit
+        echo "输入错误！！！！！你是一个一个一个"
         ;;
 esac
-echo "下面是Flyme9.2的修复 其他系统不通用"
-#是否启用指纹功耗修复并移除屏幕指纹特性
-  read -p "是否启用指纹功耗修复并移除屏幕指纹特性(y/n): " TouchID
- 
-  case $TouchID in
-    "y") 
-      echo "开始修复指纹功耗"
-      cp -frp $(find ./out/system/ -type f -name 'services.jar') ./fixbug/power_fix/
-      cd ./fixbug/power_fix
-      ./power_fix.sh
-      dist="$(find ./services.jar.out/ -type d -name 'dist')"
-      if [ ! $dist = "" ];then
-        cp -frp $dist/services.jar $systemdir/framework/
-      fi
-      cd $LOCALDIR
-      
-      echo "开始移除屏幕指纹特性(第一步)"
-      cp -frp $(find ./out/system/ -type f -name 'services.jar') ./fixbug/rmfod_fix/
-      cd ./fixbug/rmfod_fix
-      ./rmfod.sh
-      dist="$(find ./services.jar.out/ -type d -name 'dist')"
-      if [ ! $dist = "" ];then
-        cp -frp $dist/services.jar $systemdir/framework/
-      fi
-      cd $LOCALDIR 
-      echo "开始移除屏幕指纹特性(第二步)"
-      cp -frp $(find ./out/system/ -type f -name 'services.jar') ./fixbug/rmfod_fix/
-      cd ./fixbug/rmfod_fix
-      ./rmfod2.sh
-      dist="$(find ./services.jar.out/ -type d -name 'dist')"
-      if [ ! $dist = "" ];then
-        cp -frp $dist/services.jar $systemdir/framework/
-      fi
-      cd $LOCALDIR
-      ;;
-    "n")
-      echo "跳过修复"
-      ;;
-    *)
-      echo "error！"
-      exit
-      ;;  
-  esac
   # bug修复
   read -p "是否修复启用bug修复(y/n): " fixbug
   
@@ -564,8 +515,7 @@ if [[ -L $systemdir/system_ext && -d $systemdir/../system_ext ]] \
 fi
 
 if [ -L $systemdir/vendor ];then
-  echo "当前为正常pt 启用正常处理方案"
-  echo "SGSI化处理开始"
+  echo "原包处理完成处理完成"
   case $make_type in
     "A"|"a")  
       normal
@@ -577,7 +527,7 @@ if [ -L $systemdir/vendor ];then
       ;;
     "AB"|"ab")
       normal
-      echo "SGSI化处理完成"
+      echo "原包处理完成处理完成"
       fix_bug  
       ./makeimg.sh "AB"
       exit
