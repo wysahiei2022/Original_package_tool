@@ -113,14 +113,14 @@ fi
 # br检测
 if [ -e ./system.new.dat.br ];then
    echo "正在解压system.new.dat.br"
-   $bin/brotli -d system.new.dat.br
+   brotli -d system.new.dat.br
    python3 $bin/sdat2img.py system.transfer.list system.new.dat ./system.img
    mv ./system.img ../
    rm -rf ./system.new.dat
 
   if [ -e ./vendor.new.dat.br ];then
     echo "正在解压vendor.new.br"
-    $bin/brotli -d vendor.new.dat.br
+    brotli -d vendor.new.dat.br
     python3 $bin/sdat2img.py vendor.transfer.list vendor.new.dat ./vendor.img
     mv ./vendor.img ../
     rm -rf ./vendor.new.dat 
@@ -128,7 +128,7 @@ if [ -e ./system.new.dat.br ];then
 
   if [ -e ./product.new.dat.br ];then
     echo "正在解压product.new.br"
-    $bin/brotli -d product.new.dat.br
+    brotli -d product.new.dat.br
     python3 $bin/sdat2img.py product.transfer.list product.new.dat ./product.img
     mv ./product.img ../
     rm -rf ./product.new.dat
@@ -136,7 +136,7 @@ if [ -e ./system.new.dat.br ];then
 
   if [ -e ./system_ext.new.dat.br ];then
     echo "正在解压system_ext.new.dat.br"
-    $bin/brotli -d system_ext.new.dat.br
+    brotli -d system_ext.new.dat.br
     python3 $bin/sdat2img.py system_ext.transfer.list system_ext.new.dat ./system_ext.img
     mv ./system_ext.img ../
     rm -rf ./system_ext.new.dat
@@ -144,7 +144,7 @@ if [ -e ./system.new.dat.br ];then
 
   if [ -e ./odm.new.dat.br ];then
     echo "正在解压odm.new.dat.br"
-    $bin/brotli -d odm.new.dat.br
+    brotli -d odm.new.dat.br
     python3 $bin/sdat2img.py odm.transfer.list odm.new.dat ./odm.img
     mv ./odm.img ../
     rm -rf ./odm.new.dat

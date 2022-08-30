@@ -28,7 +28,8 @@ dependency_install(){
         sudo apt update --fix-missing
         sudo apt install git cpio aria2 brotli android-sdk-libsparse-utils openjdk-11-jre p7zip-full -y 
         sudo apt install bc
-        
+        sudo apt install brotli lz4
+
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         echo -e "\033[33m [DEBUG] macOS Detected \033[0m"
         echo -e "\033[33m [INFO] Installing Packages via homebrew... \033[0m"
