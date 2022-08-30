@@ -1,5 +1,4 @@
 #nfc删除
-read -p "是否删除NFC服务(y/n): " nfc
 case $nfc in
     "y")
         echo "开始删除nfc服务"

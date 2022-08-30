@@ -401,9 +401,11 @@ function make_Aonly() {
   cat ./make/add_fs/init-A_contexts >> $configdir/system_file_contexts
 }
 function fix_bug() {
+  source ./Config.sh
+
+  # XPH FIX
+  source ./xph_fix.sh
   # 亮度修复
-  read -p "是否启用亮度修复(y/n): " light
- 
   case $light in
     "y") 
       echo "启用亮度修复"
@@ -426,7 +428,6 @@ function fix_bug() {
   esac
 
 #phh化
-read -p "是否phh化(y/n): " phh
   case $phh in
     "y") 
       echo "启用phh化"
@@ -441,12 +442,8 @@ read -p "是否phh化(y/n): " phh
       exit
       ;;  
   esac
- 
-  # XPH FIX
-  source ./xph_fix.sh
 
   # bug修复
-  read -p "是否修复启用bug修复(y/n): " fixbug
   
   case $fixbug in
     "y")
