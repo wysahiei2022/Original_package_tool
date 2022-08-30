@@ -424,13 +424,13 @@ function fix_bug() {
       exit
       ;;  
   esac
+
 #phh化
 read -p "是否phh化(y/n): " phh
- 
   case $phh in
     "y") 
       echo "启用phh化"
-  cp -frp ./fixbug/add_phh-i/system/* $systemdir/
+      cp -frp ./fixbug/add_phh-i/system/* $systemdir/
       cd $LOCALDIR
       ;;
     "n")
@@ -444,7 +444,6 @@ read -p "是否phh化(y/n): " phh
  
  #nfc删除
 read -p "是否删除NFC服务(y/n): " nfc
-
 case $nfc in
     "y")
         echo "开始删除nfc服务"
