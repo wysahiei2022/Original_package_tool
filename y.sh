@@ -492,19 +492,19 @@ if [[ -L $systemdir/system_ext && -d $systemdir/../system_ext ]] \
 fi
 
 if [ -L $systemdir/vendor ];then
-  echo "原包处理完成处理完成"
+  echo "原包处理完成"
   case $make_type in
     "A"|"a")  
       normal
       make_Aonly
-      echo "SGSI化处理完成"
+      echo "原包处理完成"
       fix_bug
       ./makeimg.sh "A"
       exit
       ;;
     "AB"|"ab")
       normal
-      echo "原包处理完成处理完成"
+      echo "原包处理完成"
       fix_bug  
       ./makeimg.sh "AB"
       exit
