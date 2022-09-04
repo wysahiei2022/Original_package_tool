@@ -423,7 +423,6 @@ function fix_bug() {
       ;;
     *)
       echo "error！"
-      exit
       ;;  
   esac
 
@@ -439,7 +438,6 @@ function fix_bug() {
       ;;
     *)
       echo "error！"
-      exit
       ;;  
   esac
 
@@ -457,7 +455,6 @@ function fix_bug() {
       ;;
     *)
       echo "error！"
-      exit
       ;;        
   esac
 }
