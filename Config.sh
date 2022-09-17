@@ -1,4 +1,4 @@
-1nfc=y #一键删除NFC
+nfc=y #一键删除NFC
 light=y #修复亮度
 phh=y #PHH化
 fixbug=y #修复BUG
