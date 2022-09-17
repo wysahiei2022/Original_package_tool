@@ -14,7 +14,5 @@ if [[ ! -d ./tool_bin ]] ;then
                7z x ./Tool_bin/Phone_bin.7z
                rm -rf ./Tool_bin
             ;;
-            *)
-            echo "114514"
        esac
 fi
