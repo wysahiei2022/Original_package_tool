@@ -47,7 +47,7 @@ function UnpackImg(){
     case "$Merge" in
         "out|OUT|Out|")
             if [[ -e ./system.img ]] ;then
-                python3 $bin/imgextractor.py ./system.img ../out/system
+                python3 $bin/imgextractor.py ./system.img ../out/
             fi
 
             if [[ -e ./system_ext.img ]] ;then
@@ -55,11 +55,11 @@ function UnpackImg(){
             fi
 
             if [[ -e ./product.img ]] ;then
-                python3 $bin/imgextractor.py ./product.img ../out/system
+                python3 $bin/imgextractor.py ./product.img ../out/system/
             fi     
             
             if [[ -e ./vendor.img ]] ;then
-                python3 $bin/imgextractor.py ./vendor.img ../out/vendor
+                python3 $bin/imgextractor.py ./vendor.img ../out/
             fi
             
             if [[ -e ./odm.img ]] ;then
