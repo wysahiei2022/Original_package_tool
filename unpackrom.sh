@@ -43,3 +43,52 @@ function UnpackDat(){
         python3 $bin/sdat2img.py odm.transfer.list odm.new.bar ./temp/odm.img
     fi
 }
+function UnpackImg(){
+    case "$Merge" in
+        "out|OUT|Out|")
+            if [[ -e ./system.img ]] ;then
+                python3 $bin/imgextractor.py ./system.img ../out/system
+            fi
+
+            if [[ -e ./system_ext.img ]] ;then
+                python3 $bin/imgextractor.py ./system_ext.img ../out/system/
+            fi
+
+            if [[ -e ./product.img ]] ;then
+                python3 $bin/imgextractor.py ./product.img ../out/system
+            fi     
+            
+            if [[ -e ./vendor.img ]] ;then
+                python3 $bin/imgextractor.py ./vendor.img ../out/vendor
+            fi
+            
+            if [[ -e ./odm.img ]] ;then
+                python3 $bin/imgextractor.py ./odm.img ../out/vendor/
+            fi
+        ;;
+        "Lnside|lnside")
+            if [[ -e ./system.img ]] ;then
+                python3 $bin/imgextractor.py ./system.img ../out/system/
+            fi
+
+            if [[ -e ./system_ext.img ]] ;then
+                python3 $bin/imgextractor.py ./system_ext.img ../out/system/system/
+            fi
+
+            if [[ -e ./product.img ]] ;then
+                python3 $bin/imgextractor.py ./product.img ../out/system/system/
+            fi     
+            
+            if [[ -e ./vendor.img ]] ;then
+                python3 $bin/imgextractor.py ./vendor.img ../out/vendor/
+            fi
+            
+            if [[ -e ./odm.img ]] ;then
+                python3 $bin/imgextractor.py ./odm.img ../out/vendor/
+            fi
+        ;;
+        *)
+        echo "所以你合并到哪里？？？？？？？？"
+        ;;
+    esac
+}
