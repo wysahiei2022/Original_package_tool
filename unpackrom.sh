@@ -10,7 +10,7 @@ function UnpackPayload(){
 function UnpackBr(){
     for brfile in $( find ./tmp -name "**.br" ) ; do
     echo "正在解压$brfile"
-    brotli -d ./$brfile ../temp
+    brotli -d ./$brfile ./
     done
 }
 function UnpackDat(){
