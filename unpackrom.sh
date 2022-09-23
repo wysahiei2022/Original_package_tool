@@ -1,5 +1,5 @@
 #!/system/bin/bash
-function UnPayload(){
+function UnpackPayload(){
 	mv ./payload.bin ../payload
     echo "解压payload.bin中..."
     cd ../payload
