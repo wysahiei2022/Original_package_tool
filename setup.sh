@@ -99,5 +99,6 @@ debug_packages_version Python3 python3
 debug_packages_version Pip3 pip3
 debug_packages_version Java java
 debug_packages_version Busybox busybox
-
+pip uninstall protobuf
+pip install protobuf==3.19.0
 echo -e "\033[33m [INFO] Successfully Finished Build Environment Setup Utils, Exiting... \033[0m"
