@@ -5,7 +5,15 @@ function UnpackPayload(){
     cd ../payload
     python3 ./payload.py ./payload.bin ./temp
     echo "解压成功移动至temp目录..."
-    cd ../temp
+    cd ../tmp
+}
+function UnpackSuper(){
+    if [[ -e ./tmp/super.img ]] ;then
+        mv ./tmp/super.img ./
+        source ./unpacksuper.sh
+        mv system.img system_ext.img product.img vendor.img odm.img ./temp
+        rm -rf ./super ./super.img
+    fi
 }
 function UnpackBr(){
     for brfile in $( find ./tmp -name "**.br" ) ; do
