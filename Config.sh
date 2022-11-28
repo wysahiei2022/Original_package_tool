@@ -1,5 +1,5 @@
 #一键删除NFC（y/n）
-nfc=y
+nfc=nn
 #修复亮度（y/n）
 light=y
 #PHH化（y/n）
